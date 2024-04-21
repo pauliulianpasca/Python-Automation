@@ -18,10 +18,8 @@ class HomePage:
         logoButton = self.wait.until(EC.visibility_of_element_located(HomeLocators.logoButton))
         with soft_assertions():
             assert_that(logoButton).is_not_none()
-            if logoButton.is_displayed():
-                print("Logo is displayed.")
-            else:
-                print("Logo is not displayed.")
+            print("Logo is displayed.")
+           
 
         # Find the logo image element using HomeLocators.logoImage locator
         logo_img = logoButton.find_element(*HomeLocators.logoImage)
@@ -32,10 +30,8 @@ class HomePage:
 
         with soft_assertions():
             assert_that(logo_src).is_equal_to(expected_logo_src)
-            if assert_that(logo_src).is_equal_to(expected_logo_src):
-                print("Logo source URL is correct:", logo_src)
-            else:
-                print("Logo source URL is incorrect. Actual URL:", logo_src)
+            print("Logo source URL is correct:", logo_src)
+        
 
 
         # Find the logo image element using HomeLocators.logoImage locator
@@ -47,10 +43,8 @@ class HomePage:
 
         with soft_assertions():
             assert_that(alt_text).is_equal_to(expected_alt_text)
-            if assert_that(alt_text).is_equal_to(expected_alt_text):
-                print("Alt text of the logo is correct:", alt_text)
-            else:
-                print("Alt text of the logo is incorrect. Actual alt text:", alt_text)
+            print("Alt text of the logo is correct:", alt_text)
+            
 
         
 
@@ -59,12 +53,9 @@ class HomePage:
         expected_title_part = "Căutarea nu se oprește"
 
         with soft_assertions():
-            assert_that(logo_title).contains(expected_title_part)
-
-            if assert_that(logo_title).contains(expected_title_part):
-                print("Title contains expected part.")
-            else:
-                print("Title does not contain expected part.")
+            assert_that(logo_title).contains(expected_title_part)          
+            print("Title contains expected part.")
+            
 
 
 
@@ -80,10 +71,7 @@ class HomePage:
         # Verify if the actual title matches the expected title
         with soft_assertions():
             assert_that(actual_title).contains(expected_title)
-        if assert_that(actual_title).contains(expected_title):
             print("Title test passed.")
-        else:
-            print("Title test failed.")
-              
+                     
 
         

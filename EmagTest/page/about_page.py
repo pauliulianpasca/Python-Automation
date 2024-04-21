@@ -16,16 +16,11 @@ class AboutPage:
         # Get the actual title of the page
         actual_title = self.driver.title
 
-        # Verify if the actual title contains "eMAG Teams"
+        # Verify if the actual title contains "Bine ai venit la eMAG"
         with soft_assertions():
             assert_that(actual_title).contains("Bine ai venit la eMAG")
-
-        # Determine whether the assertion passed or failed
-
-        if assert_that(actual_title).contains("Bine ai venit la eMAG"):
             print("Title test passed.")
-        else:
-            print("Title test failed.")
+        
         
     
 
@@ -43,10 +38,7 @@ class AboutPage:
            
         # Verify the navigation buttons
         with soft_assertions():
+            assert_that(navButtonText).contains("Grupul eMAG", "eMAG Teams", "Sustenabilitate", "Media")
+            print("Butoanele sunt corecte.", text)
             
-            if assert_that(navButtonText).contains("Grupul eMAG", "eMAG Teams", "Sustenabilitate", "Media"):
-                
-                print("Butoanele sunt corecte.", text)
-            else:
-                print("Nu am gasit butoanele.")
         
